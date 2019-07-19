@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <button @click="increase()"> + </button>
-    <input id = 'testone' v-model="inputNumber">
-    <button @click="decrease()"> + </button>
+    <button v-on:click="increase()"> + </button>
+    <input type="text" id="textone" v-model="a">
+    <button v-on:click="decrease()"> - </button>
+    <!-- <input v-model = 'CreateCount'/>
+    <CreateCounterList :createCount = 'CreateCount'>
+    <Counter/> -->
   </div>
 </template>
 
 <script>
 
+// import Counter from './components/Counter.vue'
 export default {
   name: 'app',
-  data(){
-    return{
-      inputNumber : 0
-      }
-      },
+  data:function(){
+    return {
+      a:1,
+    }
+  },
   methods:{
-    increase(){
-      this.inputNumber++;
+    increase:function(){
+      this.a++
     },
-    decrease(){
-      this.inputNumber--;
+    decrease:function(){
+      this.a--
     }
   }
+  // components: {
+  //   // Counter
+  // }
 }
 </script>
 
