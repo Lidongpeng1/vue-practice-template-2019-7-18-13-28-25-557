@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="increase()"> + </button>
+    <input id = 'testone' v-model="inputNumber">
+    <button @click="decrease()"> + </button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      inputNumber : 0
+      }
+      },
+  methods:{
+    increase(){
+      this.inputNumber++;
+    },
+    decrease(){
+      this.inputNumber--;
+    }
   }
 }
 </script>
