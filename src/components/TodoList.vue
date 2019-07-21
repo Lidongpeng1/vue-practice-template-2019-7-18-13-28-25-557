@@ -13,11 +13,13 @@
 <script>
     import Header from "./Header";
     import ItemList from "./ItemList"
+    import MyFilter from "./MyFilter"
     export default {
         name: "TodoList",
         components: {
             Header,
-            ItemList
+            ItemList,
+            MyFilter
         },
         data() {
             return {
@@ -35,6 +37,21 @@
                 this.newItem = "";
                 this.showItems = this.items.slice();
             },
+            filter(status) {
+                const active = 1;
+                const complete = 2;
+                switch(status) {
+                    case active:
+                        this.showItems = this.items.filter(item => item.isChecked == false);
+                        break;
+                    case complete:
+                        this.showItems = this.items.filter(item => item.isChecked == true);
+                        break;
+                    default:
+                        this.showItems = this.items.slice();
+                        break;
+                }
+            }
         }
     }
 </script>
