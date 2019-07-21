@@ -1,0 +1,153 @@
+body {
+    font: normal normal 13px/16px "Open Sans", sans-serif;
+    background: #ccc;
+    display: block;
+    margin: 8px;
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+.container {
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: white;
+    border-radius: 5px;
+}
+
+#header {
+    text-align: left;
+}
+
+input {
+    padding: 4px 15px 4px 0;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+}
+
+.input-text {
+    width: 80%;
+    height: 25px;
+}
+
+#button {
+    display: inline-block;
+    background-color: #fc999b;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 5px 15px;
+    margin-left: 5px;
+}
+
+#button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+#item-list {
+    text-align: left;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    padding: 5px;
+    color: #000;
+}
+
+ol li span {
+    word-break: break-all;
+    width: 70%;
+    margin-left: 5px;
+}
+
+ol li:nth-child(even) {
+    background: #f4ecec;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    background-color: initial;
+    cursor: default;
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+#filters {
+    text-align: center;
+    margin-bottom: -10px;
+    margin-top: 40px;
+}
+
+#filters li a {
+    color: #fc999b;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+#filters li a.selected {
+    border-color: rgba(175, 47, 47, 0.2);
+}
+
+#filters li a:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+}
+
+#filters li {
+    display: inline;
+    margin: 0 0 5px 0;
+    padding: 8px;
+    list-style: none;
+    outline: none;
+}
+
+/*被选中后出现横线*/
+.checked {
+    color: #999;
+    text-decoration: line-through;
+}
+
+input[type=checkbox].done-todo {
+    margin: 5px 5px 2px 0;
+}
