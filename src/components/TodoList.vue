@@ -12,17 +12,30 @@
 
 <script>
     import Header from "./Header";
+    import ItemList from "./ItemList"
     export default {
         name: "TodoList",
         components: {
             Header,
+            ItemList
         },
         data() {
             return {
+                newItem: "",
+                items: [],
+                showItems: [],
             }
         },
         methods: {
+            add() {
+                this.items.push({
+                    isChecked: false,
+                    content: this.newItem
+                });
+                this.newItem = "";
+                this.showItems = this.items.slice();
             },
+        }
     }
 </script>
 
