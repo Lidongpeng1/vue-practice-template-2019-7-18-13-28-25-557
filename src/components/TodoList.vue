@@ -5,7 +5,9 @@
             <input class="input-text" type="text" v-model="newItem">
             <div id="button" @click="add">Add</div>
         </div>
+        <div>
         <ItemList :items="showItems" />
+        </div>
         <MyFilter v-on:status="filter" />
     </div>
 </template>
@@ -19,7 +21,7 @@
         components: {
             Header,
             ItemList,
-            MyFilter
+            MyFilter,
         },
         data() {
             return {
