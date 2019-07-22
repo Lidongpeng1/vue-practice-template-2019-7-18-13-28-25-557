@@ -1,21 +1,32 @@
 <template>
-  <div id="filters">
-    <ul>
-      <li>
-        <a @click="$emit('status', 0)">ALL</a>
-      </li>
-      <li>
-        <a @click="$emit('status', 1)">Active</a>
-      </li>
-      <li>
-        <a @click="$emit('status', 2)">Complete</a>
-      </li>
-    </ul>
-  </div>
+    <div id="filters">
+        <ul>
+            <li>
+                <a @click="showAll">ALL</a>
+            </li>
+            <li>
+                <a @click="showActive">Active</a>
+            </li>
+            <li>
+                <a @click="showComplete">Complete</a>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
-  export default {
-    name: "MyFilter"
-  };
+    export default {
+        name: "MyFilter",
+        methods: {
+            showAll() {
+                this.$store.commit('setIsShowAll', true);
+            },
+            showActive() {
+                this.$store.commit('setIsShowActive', true);
+            },
+            showComplete() {
+                this.$store.commit('setIsShowActive', false);
+            }
+        }
+    };
 </script>
