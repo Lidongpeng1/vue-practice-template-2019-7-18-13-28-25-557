@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <CounterGroup/>
+    <button v-on:click="increase"> + </button>
+    <input type="text" v-model="this.$store.state.count">
+    <button v-on:click="decrease"> - </button>
   </div>
 </template>
 
-<script>
-import CounterGroup from "./components/CounterGroup"
 
+<script>
 export default {
   name: 'app',
-  components: {
-    CounterGroup
-
+  data() {
+    return {
+    }
+  },
+  methods:{
+    increase:function () {
+      this.$store.commit("increase");
+    },
+    decrease:function () {
+      this.$store.commit("decrease");
+    },
   }
 }
 </script>
