@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input class="input-text" type="text" v-model="input" @keyup.enter="add">
+        <input class="input-text" type="text" v-model="input">
         <div id="button" @click="add">Add</div>
     </div>
 </template>
@@ -15,11 +15,11 @@
         },
         methods: {
             add() {
-                if (this.input.length == 0) {
+                if (this.input == undefined) {  //未实现
                     alert("输入为空")
                 } else {
-                    this.$store.dispatch('addTodo',{
-                        completed: false,
+                    this.$store.commit('push',{
+                        isChecked: false,
                         content: this.input
                     });
                     this.input = "";
