@@ -18,7 +18,7 @@
             }
         },
         methods: {
-            showMethod(item) {      //未实现：用每个item自己的isChecked属性判断
+            showMethod(item) {     
                 return this.$store.state.isShowAll ? true :
                     (this.$store.state.isShowActive ? !item.isChecked : item.isChecked);
             }
