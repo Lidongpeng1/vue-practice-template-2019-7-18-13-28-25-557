@@ -1,9 +1,10 @@
 <template>
     <div id="item-list">
         <ol>
-            <li v-for="(item, index) in items" :key="item.content + index" v-show="showMethod(item)">
-                <input type="checkbox" v-model="item.isChecked" />
-                <span v-bind:class="{checked: item.isChecked}">{{  item.content  }}</span>
+            <li v-for="(item, index) in showItems" :key="index" style="height: 40px; line-height: 30px">
+                <a-checkbox @change="changeStatu(item)" :checked="item.completed"></a-checkbox>
+                <span :class="{checked: item.completed}">{{  item.content  }}</span>
+                <button id="delete" @click="deleteItem(item)">Delete</button>
             </li>
         </ol>
     </div>
@@ -12,15 +13,24 @@
 <script>
     export default {
         name: "ItemList",
+        //mounted用法示例
+        mounted: function () {
+            this.$store.dispatch('getTodolists');
+            console.log("load all")
+        },
         computed: {
-            items() {
-                return this.$store.state.items;
+            showItems() {
+                return this.$store.getters.showItems;
             }
         },
         methods: {
-            showMethod(item) {     
-                return this.$store.state.isShowAll ? true :
-                    (this.$store.state.isShowActive ? !item.isChecked : item.isChecked);
+            changeStatu(item) {
+                let newItem = item;
+                newItem.completed = !item.completed;
+                this.$store.dispatch('updateTodo', newItem);
+            },
+            deleteItem(item) {
+                this.$store.dispatch('deleteItem', item);
             }
         }
     }

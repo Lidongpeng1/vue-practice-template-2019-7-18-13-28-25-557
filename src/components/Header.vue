@@ -1,8 +1,8 @@
 <template>
     <div id="header">
-        <h2>Jquery To Do List</h2>
+        <h1>To Do List</h1>
         <p>
-            <em>Simple Todo List with adding and filter by diff status.</em>
+            <em style="font-size: 18px">Simple Todo List with adding and filter by diff status.</em>
         </p>
     </div>
 </template>

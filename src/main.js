@@ -1,36 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Vuex from 'vuex'
-import VueRouter from 'vue-router'
-
-Vue.use(Vuex);
-Vue.use(VueRouter);
+import store from './store/index'
 import router from './router'
 
-const store = new Vuex.Store({
-    state: {
-        items: [],
-        isShowAll: true,
-        isShowActive: false
-    },
-    mutations: {
-        push(state, item) {
-            state.items.push(item);
-        },
-        setIsShowAll(state, isShowAll) {
-            state.isShowAll = isShowAll;
-        },
-        setIsShowActive(state, isShowActive) {
-            state.isShowAll = false;
-            state.isShowActive = isShowActive;
-        }
-    }
-})
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.config.productionTip = false;
 
-Vue.config.productionTip = false
+Vue.use(Antd)
 
 new Vue({
-    router,
     store,
+    router,
     render: h => h(App),
 }).$mount('#app')

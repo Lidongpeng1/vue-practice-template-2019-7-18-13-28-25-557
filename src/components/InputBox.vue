@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <input class="input-text" type="text" v-model="input">
-        <div id="button" @click="add">Add</div>
+    <div style="line-height: 1">
+        <a-input-search class="input-text" type="text" v-model="input" @search="add" placeholder="input to do list" size="large">
+            <a-button slot="enterButton" id="button">Add</a-button>
+        </a-input-search>
     </div>
 </template>
 
@@ -15,11 +16,12 @@
         },
         methods: {
             add() {
-                if (this.input == undefined) {  //未实现
+                console.log("add")
+                if (this.input.length == 0) {
                     alert("输入为空")
                 } else {
-                    this.$store.commit('push',{
-                        isChecked: false,
+                    this.$store.dispatch('addTodo',{
+                        completed: false,
                         content: this.input
                     });
                     this.input = "";

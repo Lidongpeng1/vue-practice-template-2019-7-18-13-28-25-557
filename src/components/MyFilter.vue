@@ -15,17 +15,18 @@
 </template>
 
 <script>
+    import showType from '../store/showType'
     export default {
         name: "MyFilter",
         methods: {
             showAll() {
-                this.$store.commit('setIsShowAll', true);
+                this.$store.commit('setShowType', showType.SHOW_ALL);
             },
             showActive() {
-                this.$store.commit('setIsShowActive', true);
+                this.$store.commit('setShowType', showType.SHOW_ACTIVE);
             },
             showComplete() {
-                this.$store.commit('setIsShowActive', false);
+                this.$store.commit('setShowType', showType.SHOW_COMPLETED);
             }
         }
     };
