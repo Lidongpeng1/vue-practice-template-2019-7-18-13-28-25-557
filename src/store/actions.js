@@ -12,11 +12,16 @@ const actions = {
     addTodo({ commit }, item) {
         axios.post(url, item).then(function (response) {
             commit('push', response.data)
-        })
+        }).catch(error => console.log(error))
     },
     updateTodo({ commit }, item) {
         axios.put(`${url}/${item.id}`,item).then(function (response) {
             commit('updateTodo', response.data)
+        }).catch(error => console.log(error))
+    },
+    deleteItem({ commit }, item) {
+        axios.delete(`${url}/${item.id}`).then(function () {
+            commit('deleteItem', item)
         }).catch(error => console.log(error))
     }
 };

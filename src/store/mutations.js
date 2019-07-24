@@ -13,11 +13,16 @@ export default {
         state.items = items;
     },
     updateTodo(state, item) {
-        // eslint-disable-next-line no-debugger
-        debugger
         for (let i = 0; i < state.items.length; i++) {
             if (state.items[i].id === item.id) {
                 state.items[i] = item;
+            }
+        }
+    },
+    deleteItem(state, item) {
+        for (let i = 0; i < state.items.length; i++) {
+            if (state.items[i].id === item.id) {
+                state.items.splice(i, 1);
             }
         }
     }

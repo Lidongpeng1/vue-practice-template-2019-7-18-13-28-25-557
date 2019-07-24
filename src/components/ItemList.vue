@@ -1,10 +1,11 @@
-<template>
+﻿<template>
     <div id="item-list">
         <ol>
             <li v-for="(item, index) in items" :key="index" v-show="showMethod(item)">
 <!--                <input type="checkbox" v-model="item.isChecked" />-->
                 <input type="checkbox" @click="changeStatu(item)" :checked="item.completed" />
                 <span :class="{checked: item.completed}">{{  item.content  }}</span>
+                <button id="delete" @click="deleteItem(item)">Delete</button>
             </li>
         </ol>
     </div>
@@ -32,6 +33,9 @@
                 let newItem = item;
                 newItem.completed = !item.completed;
                 this.$store.dispatch('updateTodo', newItem);
+            },
+            deleteItem(item) {
+                this.$store.dispatch('deleteItem', item);
             }
         }
     }

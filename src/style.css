@@ -1,4 +1,4 @@
-body {
+﻿body {
     font: normal normal 13px/16px "Open Sans", sans-serif;
     background: #ccc;
     display: block;
@@ -68,6 +68,22 @@ input {
 }
 
 #button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+#delete {
+    float: right;
+    display: inline-block;
+    background-color: #7c3e50;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: right;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+#delete:hover {
     cursor: pointer;
     opacity: .8;
 }
